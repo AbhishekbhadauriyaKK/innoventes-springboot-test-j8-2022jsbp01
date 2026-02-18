@@ -39,7 +39,7 @@ public class CompanyController {
 
 	@Autowired
 	private MessageSource messageSource;
-
+@GetMapping("/{id}")
 public ResponseEntity<Company> getCompanyById(@PathVariable Long id){
 Company company= companyService.getCompanyById(id);
 	return ResponseEntity.ok(company);
