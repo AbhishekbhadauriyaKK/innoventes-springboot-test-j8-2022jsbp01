@@ -40,9 +40,9 @@ public class CompanyController {
 	@Autowired
 	private MessageSource messageSource;
 
-	
+	@GetMapping("/code{companyCode}")
 public ResponseEntity<Company> getCompanyByCompanyCode( @pathVaraibe String companyCode){
-Company company=companyService.getCompanyByCompanyCode(companyCode);
+Company company=companyService.getCompanyByCode(companyCode);
 	returnResponseEntity.ok(company);
 }
 
