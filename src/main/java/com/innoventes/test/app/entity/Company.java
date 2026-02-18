@@ -30,12 +30,16 @@ public class Company extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "company_seq")
 	private Long id;
 
+	
+	@NotBlank
+	@Size(min=5)
 	@Column(name = "company_name")
 	private String companyName;
-
+    @NotBlank
+	@Email	 
 	@Column(name = "email")
 	private String email;
-	
+	@Min(0)
 	@Column(name = "strength")
 	private Integer strength;
 	
