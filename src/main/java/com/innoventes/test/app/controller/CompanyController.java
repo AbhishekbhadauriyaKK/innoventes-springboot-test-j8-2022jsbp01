@@ -97,5 +97,9 @@ Company company= companyService.getCompanyById(id);
 	public String getMessage(String exceptionCode) {
 		return messageSource.getMessage(exceptionCode, null, LocaleContextHolder.getLocale());
 	}
+	@patchMapping("/{id}")
+	public ResponseEntity<Company>patchCompany(@PathVariable Long id, @RequestBody @Valid CompanyDTO dto){
+		Company updated companyService.patchCompany(id, dto);
+		return ResponseEntity.ok(company);
 
 }
