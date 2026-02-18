@@ -40,6 +40,10 @@ public class CompanyController {
 	@Autowired
 	private MessageSource messageSource;
 
+public ResponseEntity<Company> getCompanyById(@PathVariable Long id){
+Company company= companyService.getCompanyById(id);
+	return ResponseEntity.ok(company);
+}	
 	@GetMapping("/companies")
 	public ResponseEntity<List<CompanyDTO>> getAllCompanies() {
 		List<Company> companyList = companyService.getAllCompanies();
