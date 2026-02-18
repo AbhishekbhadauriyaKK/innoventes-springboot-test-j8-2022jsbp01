@@ -45,4 +45,7 @@ public class Company extends BaseEntity {
 	
 	@Column(name = "website_url")
 	private String webSiteURL;
+      @Column(name="company_code",unique=true,length=5)
+	@pattern(regexp="^[A-Za-z]{2}\\d{2}[ENen]$")
+	private String companyCode;
 }
