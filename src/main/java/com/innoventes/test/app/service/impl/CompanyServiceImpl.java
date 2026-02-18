@@ -57,5 +57,8 @@ public class CompanyServiceImpl implements CompanyService {
 	public Company getCompanyById(Long id){
 		return companyRepository.findById(id).orElseThrow(()-> new RuntimeException("company not found");
 
-	
+	public Comapany getCompanyByCode(String companyCode){
+		return companyRepository.findByCompanyCode(companyCode)
+			           .orElseThrow(()-> new RuntimeException("Company not found");
 }
+	}
