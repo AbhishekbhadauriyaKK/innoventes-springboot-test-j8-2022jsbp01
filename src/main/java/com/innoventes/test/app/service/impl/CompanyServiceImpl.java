@@ -61,4 +61,19 @@ public class CompanyServiceImpl implements CompanyService {
 		return companyRepository.findByCompanyCode(companyCode)
 			           .orElseThrow(()-> new RuntimeException("Company not found");
 }
+
+@Transactional
+public Company patchCompany(Long id,CompanyDTO dto){
+	Company company=companyRepository.findById(id).orElseThrow(()->RuntimeException("company not found"));
+	if(dto.getCompanyName()!=null){company.setCompanyName(dto.getCompanyName());}
+	if(dto.getEmail()!=null){company.setEmail(dto.getEmail());}
+	if(dto.getStrength()!=null){company.setStrength(dto.getStrength());}
+	if(dto.getWebSiteURL()!=null){company.setWebSiteURL(dto.get.WebSiteURL());}
+	if(dto.getCompanyCode()!=null){company.setCompanyCode(dto.getCompanyCode());}
+	return companyRepository.save(company);
+}
+								   
+
+
+		
 	}
