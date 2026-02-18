@@ -40,6 +40,7 @@ public class Company extends BaseEntity {
 	@Column(name = "email")
 	private String email;
 	@Min(0)
+	@EvenNumberOrZero
 	@Column(name = "strength")
 	private Integer strength;
 	
